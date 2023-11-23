@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt gunicorn
 
 # Copy the Flask app code to the container
-COPY main.py .
+COPY app.py .
 
 # Expose port 5000 (the default Flask port)
 EXPOSE 5000
