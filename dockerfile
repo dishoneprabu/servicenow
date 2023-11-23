@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy the Python script to the container
-COPY your_python_script.py /app/your_python_script.py
+COPY main.py /app/main.py
 
 # Install Flask
 RUN pip install flask
@@ -17,4 +17,4 @@ EXPOSE 5000
 ENV FLASK_ENV=production
 
 # Command to run the Flask application indefinitely
-CMD ["sh", "-c", "while true; do python your_python_script.py; done"]
+CMD ["sh", "-c", "while true; do python main.py; done"]
