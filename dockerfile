@@ -4,6 +4,12 @@ FROM python:3.9-slim
 # Set the working directory inside the container
 WORKDIR /app
 
+# Copy the requirements file to the container
+COPY requirements.txt .
+
+# Install dependencies, including Gunicorn
+RUN pip install --no-cache-dir -r requirements.txt gunicorn
+
 # Copy the Flask app code to the container
 COPY main.py .
 
